@@ -1,5 +1,5 @@
-#data <- read.table("household_power_consumption.txt",sep=";",header=TRUE,stringsAsFactors = FALSE)
-#dataSubset <- subset(data,Date=="1/2/2007"| Date=="2/2/2007")
+data <- read.table("household_power_consumption.txt",sep=";",header=TRUE,stringsAsFactors = FALSE)
+dataSubset <- subset(data,Date=="1/2/2007"| Date=="2/2/2007")
 dataSubset$DateTime <- strptime(paste(dataSubset$Date,dataSubset$Time),format="%d/%m/%Y %H:%M:%S")
 
 with(dataSubset,plot(DateTime,Sub_metering_1,type="l",xlab="",ylab="Energy sub metering"))
